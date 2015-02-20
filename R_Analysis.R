@@ -5,7 +5,7 @@
 
 #get.tidy.dataset   --  this function is where merges and other cleaning operations happen
 #get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
-#clean.up.column.names  --  this function is where the activity numbers are mapped to the activity labels
+#clean.up.column.names  --  this function is where the column labels/names are tidied up
 
 get.tidy.dataset<-function()
 		{
