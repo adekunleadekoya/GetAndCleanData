@@ -6,6 +6,102 @@ The Course Project is an important component of this course and most of the othe
 The purpose of this project is to demonstrate my  ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis
 
 ## INSTRUCTIONS
+
+Here are the data for the project:
+
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+I have created an R script called R_ANALYSIS.R that does the following. 
+
+    
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+- 
+
+## R SCRIPT - DOCUMENTATION 
+
+
+### FILE NAME : R_ANALYSIS.R (
+ 
+### INPUT : [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+### OUTPUT : A tidy dataset saved in a file named tidyDT.txt
+
+### TRANSFORMATION PROCEDURE :  
+![](http://reg.run.edu.ng/DS/alex_diagram.jpg)
+			Fig 1
+![](http://reg.run.edu.ng/DS/david_hood_diagram.jpg)
+			Fig 2
+## FUNCTIONAL COMPONENTS OF THE SCRIPT
+
+      
+
+- get.tidy.dataset   --  this function is where merges and other cleaning operations , outlined in the 5 instructional steps above , happen
+       
+
+- get.activity.names.from_activity_numbers -- this is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
+
+ 
+    get.tidy.dataset<-**function(s.working_dir ='C:/New   Folder/Data Science/Getting and Cleaning Data/data/UCI HAR Dataset',
+            s.output.file='tidyDT.txt')** {	
+
+			setwd(s.working_dir)
+  
+
+			x_test<-read.table('./test/x_test.txt')   # loads x_test dataset
+			y_test<-read.table('./test/y_test.txt')   # loads y_test dataset			
+			subject_test<-read.table('./test/subject_test.txt') # loads subject_test dataset              
+
+            x_train<-read.table('./train/x_train.txt') # loads x_train dataset
+			y_train<-read.table('./train/y_train.txt') # loads y_train dataset
+			subject_train<-read.table('./train/subject_train.txt')  
+                  
+            DT<-rbind(data.frame(x_train),data.frame(x_test)) 
+            y_DT<-rbind(data.frame(y_train),data.frame(y_test))
+                      
+
+			subject_DT<-rbind(data.frame(subject_train),data.frame(subject_test))
+                     
+
+			features<-read.table('features.txt',sep=' ') 
+			                  
+            colnames(DT)<-features[,2]  # loads column names in features.txt into data frame
+          
+
+			DT<-DT[,grepl("[Mm]ean\\(\\)|std\\(\\)",colnames(DT))] # extracts mean() and std() columns from DT
+ 
+
+			y.activity.names<-get.activity.names.from_activity_numbers(y_DT)
+                          
+			DT<-cbind(y.activity.names[,1],DT) 
+                         
+
+			colnames(DT)[1]<- 'activity.name' # labels the new activity column in DT
+ 
+
+			DT<-cbind(subject_DT,DT)    # adds a subject column to the left of  data frame DT                
+                	colnames(DT)[1]<- 'subject'   # labels the new  subject column in DT
+ 
+			DT.2 <- DT %>% group_by(activity.name,subject) %>% summarise_each(funs(mean))
+			
+			colnames(DT.2)<- clean.up.column.names( colnames(DT.2))
+
+			write.table(DT.2,s.output.file,row.name=FALSE)  # writes tidy dataset to text file
+
+                
+			DT.2 #  this line returns the dataset DT after cleaning in line with previous cleaning operations
+ 
+ 
+		
+		}
+
+
+
 * **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
 * **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
 * **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
