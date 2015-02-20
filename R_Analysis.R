@@ -1,13 +1,13 @@
-##   **********Make sure that the folder (UCI HAR Dataset ) *****
-##   **********where data files are stored is the current working directory ***
-##   ********** else there may be problems loading the data files from this script/prgram
+#**********Make sure that the folder (UCI HAR Dataset ) *****
+#**********where data files are stored is the current working directory ***
+#********** else there may be problems loading the data files from this script/prgram
 
 
-##  get.tidy.dataset   --  this function is where merges and other cleaning operations happen
-##  get.activity.names.from_activity_numbers -- this is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
+#get.tidy.dataset   --  this function is where merges and other cleaning operations happen
+#get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
+#clean.up.column.names  --  this function is where the activity numbers are mapped to the activity labels
 
-
-get.tidy.dataset<-function(s.working_dir='C:/New Folder/Data Science/Getting and Cleaning Data/data/UCI HAR Dataset',
+get.tidy.dataset<-function(s.working_dir=getwd(),
                            s.output.file='tidyDT.txt')
 		{
  			 library(dplyr)
@@ -141,11 +141,18 @@ clean.up.column.names<-function(v)
 		  v             
 		}
 
-##  DT=get.tidy.dataset(s.output.file='tidyDT.txt') # invokes function that creates tidy dataset 
-##  DT=get.tidy.dataset(getwd(),s.output.file='tidyDT.txt') $ another possible invocation of this function
 
 
-##  uncomment the following two lines if any of above two lines have been executed
 
-##   data <- read.table(s.output.file, header = TRUE)  ##  reads the tidy dataset from disk
-##   View(data)                                        ## Views tidy dataset      
+DT=get.tidy.dataset(s.output.file='tidyDT.txt') 
+       # above line invokes the main function that generates the tidy dataset
+	 # the input files(x_train.txt,x_test.txt etc are to be found in getwd() )
+       # the second parameter to the function tells about the name of the file..
+	 # ... that would be used to save the output tidy dataset
+
+
+ 
+
+ 
+data <- read.table('tidyDT.txt', header = TRUE)  ##  reads the tidy dataset from disk
+View(data)                                        ## Views tidy dataset      
