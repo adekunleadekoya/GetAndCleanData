@@ -7,12 +7,9 @@
 #get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
 #clean.up.column.names  --  this function is where the activity numbers are mapped to the activity labels
 
-get.tidy.dataset<-function(s.working_dir=getwd(),
-                           s.output.file='tidyDT.txt')
+get.tidy.dataset<-function()
 		{
- 			 library(dplyr)
-
-			setwd(s.working_dir)
+ 			 library(dplyr)			 
 				
                   #    **************BEGIN STEP 1 :  Merges the training and the test sets to create one data set***
 
@@ -103,7 +100,7 @@ get.tidy.dataset<-function(s.working_dir=getwd(),
 			
 			colnames(DT.2)<- clean.up.column.names( colnames(DT.2))
 
-			write.table(DT.2,s.output.file,row.name=FALSE)  # writes tidy dataset to text file
+			write.table(DT.2,'tidyDT.txt',row.name=FALSE)  # writes tidy dataset to text file
 
                 
 			DT.2 #  this line returns the dataset DT after cleaning in line with previous cleaning operations
@@ -144,7 +141,7 @@ clean.up.column.names<-function(v)
 
 
 
-DT=get.tidy.dataset(s.output.file='tidyDT.txt') 
+DT=get.tidy.dataset() 
        # above line invokes the main function that generates the tidy dataset
 	 # the input files(x_train.txt,x_test.txt etc are to be found in getwd() )
        # the second parameter to the function tells about the name of the file..
