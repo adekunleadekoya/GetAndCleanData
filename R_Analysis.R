@@ -9,7 +9,7 @@
 
 get.tidy.dataset<-function()
 		{
- 			 library(dplyr)			 
+ 			library(dplyr)			 
 				
                   #    **************BEGIN STEP 1 :  Merges the training and the test sets to create one data set***
 
@@ -35,19 +35,19 @@ get.tidy.dataset<-function()
 			#  ... change the column names of DT to names in features.txt
                 
                   DT<-rbind(data.frame(x_train),data.frame(x_test)) 
-                      # above line merges training and test datasets ...
-		          # ... and stores result in data frame DT 
+                  # above line merges training and test datasets ...
+		      # ... and stores result in data frame DT 
 
                   y_DT<-rbind(data.frame(y_train),data.frame(y_test))
-                      # above line merges y_train with y_test and...
-			    # ...stores result in data frame y_DT
+                  # above line merges y_train with y_test and...
+			# ...stores result in data frame y_DT
 
 			subject_DT<-rbind(data.frame(subject_train),data.frame(subject_test))
-                      # above line merges subject_train with subject_test ...
-			    # ... and stores result in data frame subject_DT
+                  # above line merges subject_train with subject_test ...
+			# ... and stores result in data frame subject_DT
 
 			features<-read.table('features.txt',sep=' ') 
-			    # above line loads the features into data frame features                 
+			# above line loads the features into data frame features                 
                   
                   colnames(DT)<-features[,2]  # loads column names in features.txt into data frame
                   
@@ -73,22 +73,20 @@ get.tidy.dataset<-function()
 
 
 			y.activity.names<-get.activity.names.from_activity_numbers(y_DT)
-                           # above line gets the activity names given the activity numbers
+                  # above line gets the activity names given the activity numbers
 			DT<-cbind(y.activity.names[,1],DT) 
-                           # above line adds the activity column to the left of data frame DT
+                  # above line adds the activity column to the left of data frame DT
 
 			colnames(DT)[1]<- 'activity.name' # labels the new activity column in DT
 
 			#    *********END STEP 3********************************************
-
-
 
 			DT<-cbind(subject_DT,DT)    # adds a subject column to the left of  data frame DT                
                 	colnames(DT)[1]<- 'subject'   # labels the new  subject column in DT
 
                   #    *******BEGIN STEP 4 : Appropriately labels the data set with descriptive variable names *******  
 
-			   ####  column labels are descriptive enough... no further processing would be done at this step
+			#column labels are descriptive enough... no further processing would be done at this step
 
 		      #    *******END STEP 4*********************************************
 
@@ -119,9 +117,9 @@ get.tidy.dataset<-function()
                  
 			j<-match(y_DT[,1],activity.labels[,1])
                   
-                  DT.activity.names <- data.frame(activity.labels[c(j),2],nrow=length(j),ncol=1)
+			DT.activity.names <- data.frame(activity.labels[c(j),2],nrow=length(j),ncol=1)
                  
-                  DT.activity.names # returns a data.table that stores the activity names
+			DT.activity.names # returns a data.table that stores the activity names
                   
 			 
 			  
