@@ -29,10 +29,26 @@ I have created an R script called R_ANALYSIS.R that does the following.
 ### FILE NAME : R_ANALYSIS.R (
  
 ### INPUT : [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+- x_train.txt
+- x_test.txt
+- y_train.txt
+- y_test.txt
+- subject_train.txt
+- subject_test.txt
+- features.txt
+- activity_label.txt
 
-### OUTPUT : A tidy dataset saved in a file named tidyDT.txt
 
-### TRANSFORMATION PROCEDURE :  
+### OUTPUT : A tidy dataset saved in a file named tidyDT.txt 
+
+### SNAPSHOT OF Tidy dataset produced with View(dataset)
+
+![](https://reg.run.edu.ng/DS/view_of_tidy_dataset.jpg)
+
+
+
+
+### DIAGRAM OF THE SCRIPT's WORKINGS :  
 ![](http://reg.run.edu.ng/DS/alex_diagram.jpg)
 			Fig 1
 ![](http://reg.run.edu.ng/DS/david_hood_diagram.jpg)
@@ -44,7 +60,7 @@ I have created an R script called R_ANALYSIS.R that does the following.
 - get.tidy.dataset   --  this function is where merges and other cleaning operations , outlined in the 5 instructional steps above , happen
        
 
-- get.activity.names.from_activity_numbers -- this is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
+- get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
 
  
     get.tidy.dataset<-**function(s.working_dir ='C:/New   Folder/Data Science/Getting and Cleaning Data/data/UCI HAR Dataset',
