@@ -29,17 +29,23 @@ I have created an R script called R_ANALYSIS.R that does the following.
 
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 
-### FILE NAME : R_ANALYSIS.R (
+### SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R)
  
-### INPUT : [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-- x_train.txt
-- x_test.txt
-- y_train.txt
-- y_test.txt
-- subject_train.txt
-- subject_test.txt
-- features.txt
-- activity_label.txt
+### INPUT : 
+
+- x_train.txt  (from zip file)
+- y_train.txt (from zip file)
+- subject_train.txt (from zip file)
+
+- x_test.txt  (from zip file)
+- y_test.txt  (from zip file)
+- subject_test.txt (from zip file)
+
+- features.txt   (from zip file)
+- activity_labels.txt  (from zip file)
+
+Note : above input files to the script are obtained from
+   the zip file referenced in section INSTRUCTIONS above.
 
 
 ### OUTPUT : A tidy dataset saved in a file named tidyDT.txt 
@@ -65,61 +71,36 @@ This script starts with the assumption that the Samsung data is available in the
 
 - get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
 
- 
-    get.tidy.dataset<-**function(s.working_dir ='C:/New   Folder/Data Science/Getting and Cleaning Data/data/UCI HAR Dataset',
-            s.output.file='tidyDT.txt')** {	
-
-			setwd(s.working_dir)
-  
-
-			x_test<-read.table('./test/x_test.txt')   # loads x_test dataset
-			y_test<-read.table('./test/y_test.txt')   # loads y_test dataset			
-			subject_test<-read.table('./test/subject_test.txt') # loads subject_test dataset              
-
-            x_train<-read.table('./train/x_train.txt') # loads x_train dataset
-			y_train<-read.table('./train/y_train.txt') # loads y_train dataset
-			subject_train<-read.table('./train/subject_train.txt')  
-                  
-            DT<-rbind(data.frame(x_train),data.frame(x_test)) 
-            y_DT<-rbind(data.frame(y_train),data.frame(y_test))
-                      
-
-			subject_DT<-rbind(data.frame(subject_train),data.frame(subject_test))
-                     
-
-			features<-read.table('features.txt',sep=' ') 
-			                  
-            colnames(DT)<-features[,2]  # loads column names in features.txt into data frame
-          
-
-			DT<-DT[,grepl("[Mm]ean\\(\\)|std\\(\\)",colnames(DT))] # extracts mean() and std() columns from DT
- 
-
-			y.activity.names<-get.activity.names.from_activity_numbers(y_DT)
-                          
-			DT<-cbind(y.activity.names[,1],DT) 
-                         
-
-			colnames(DT)[1]<- 'activity.name' # labels the new activity column in DT
- 
-
-			DT<-cbind(subject_DT,DT)    # adds a subject column to the left of  data frame DT                
-                	colnames(DT)[1]<- 'subject'   # labels the new  subject column in DT
- 
-			DT.2 <- DT %>% group_by(activity.name,subject) %>% summarise_each(funs(mean))
-			
-			colnames(DT.2)<- clean.up.column.names( colnames(DT.2))
-
-			write.table(DT.2,s.output.file,row.name=FALSE)  # writes tidy dataset to text file
-
-                
-			DT.2 #  this line returns the dataset DT after cleaning in line with previous cleaning operations
+- clean.up.column.names  --  this function is where the column labels/names are tidied up
  
  
-		
-		}
+##  HIGH LEVEL ANALYSIS OF SCRIPT
+1.  DT<-get.tidy.dataset() 
+	--function call  returns tidy dataset DT
+2.  data <- read.table('tidyDT.txt', header = TRUE) 
+    -- function call reads the tidy dataset from disk
+3.  View(data)
+	--   views tidy dataset
 
 
+    function get.tidy.dataset()
+    	begin
+    
+    	end 
+    
+    function get.activity.names.from_activity_numbers()
+    	begin
+    
+    	end
+
+    function clean.up.column.names()
+    	begin
+    
+    	end
+
+ 
+
+- 
 
 * **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
 * **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
