@@ -21,11 +21,7 @@ I have created an R script called R_ANALYSIS.R that does the following.
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-##  PRE-ANALYSIS CLEASING OF INPUT
-
-### x_train.txt :
-
-### y_test.txt  :
+ 
 
 ## R SCRIPT - DOCUMENTATION 
 
@@ -61,7 +57,7 @@ Note : above input files to the script are obtained from
 
 ![](https://reg.run.edu.ng/DS/view_of_tidy_dataset.jpg)
 
-### CODE SNIPPET THAT PRODUCES above SNAPSHOT:
+### A CODE SNIPPET THAT PRODUCES above SNAPSHOT:
 
     data <- read.table('tidyDT.txt', header = TRUE)  ##  reads the tidy dataset from disk
     View(data)
@@ -69,7 +65,7 @@ Note : above input files to the script are obtained from
 
 
 
-### DIAGRAM OF THE SCRIPT's WORKINGS :  
+### A DIAGRAM OF THE SCRIPT's INNER WORKINGS :  
 ![](http://reg.run.edu.ng/DS/alex_diagram.jpg)
 			 
 ![](http://reg.run.edu.ng/DS/david_hood_diagram.jpg)
@@ -182,13 +178,22 @@ Note : above input files to the script are obtained from
 - 
  
 
-## INSTALL SCRIPT
+## INSTALL AND RUN THE SCRIPT
+
+ 
+1. Clone the repo [https://github.com/adekunleadekoya/GetAndCleanData](https://github.com/adekunleadekoya/GetAndCleanData) and note the presence of a file R_ANALYSIS.R in the local clone.
+           **OR** 
+2. Click  [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R) and copy the Raw version of the gitHub file to a text editor on your local machine. Save the copied contents as R_Analysis.R
+3. DOWNLOAD THE SAMZUNG ZIP FILE [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+4. UNZIP the download from step 3 above
+5. Configure R/R Studio so that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
+6. From R/R Studio, type : source("<PATH-TO-FILE>/R_ANALYSIS.R")
+ 
+ 
+ 
 
 
-## GETTING SCRIPT
-
-
-## FOR MORE HELP , CALL :
+## CONTACT ME :
 
 - ADEKOYA ADEKUNLE ROTIMI
 - adekunleadekoya@gmail.com or adekoyaa@run.edu.ng
