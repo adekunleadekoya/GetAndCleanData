@@ -181,16 +181,18 @@ Note : above input files to the script are obtained from
 ## INSTALL AND RUN THE SCRIPT
 
  
-1. Clone the repo [https://github.com/adekunleadekoya/GetAndCleanData](https://github.com/adekunleadekoya/GetAndCleanData) and note the presence of a file R_ANALYSIS.R in the local clone.
+1. Clone the repo [https://github.com/adekunleadekoya/GetAndCleanData](https://github.com/adekunleadekoya/GetAndCleanData) and note the presence of a file R_ANALYSIS.R in the local repo.
            **OR** 
-2. Click  [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R) and copy the Raw version of the gitHub file to a text editor on your local machine. Save the copied contents as R_Analysis.R
+2. Click  [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R) and copy the Raw version of the gitHub file to a text editor on your local machine. Save the copied contents as R_ANALYSIS.R
 3. DOWNLOAD THE SAMZUNG ZIP FILE [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 4. UNZIP the download from step 3 above
 5. Configure R/R Studio so that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 6. From R/R Studio, type : source("<PATH-TO-FILE>/R_ANALYSIS.R")
- 
- 
- 
+
+
+##  RESULTS OF RUNNING THE SCRIPT
+- A **view** of the tidy dataset is popped up immediately the script runs to completion
+- Also, a file named tidyDT.txt is created and deposited on the working directory. The file contains the output of the script. You may open the file with a text editor and observe the integrity of the file's contents.
 
 
 ## CONTACT ME :
