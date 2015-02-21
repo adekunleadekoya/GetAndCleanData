@@ -29,9 +29,9 @@ I have created an R script called R_ANALYSIS.R that does the following.
 
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 
-### SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R)
+### LOCATION OF SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R)
  
-### INPUT : 
+### INPUT TO SCRIPT: 
 
 - x_train.txt  (from zip file)
 - y_train.txt (from zip file)
@@ -48,20 +48,25 @@ Note : above input files to the script are obtained from
    the zip file referenced in section INSTRUCTIONS above.
 
 
-### OUTPUT : A tidy dataset saved in a file named tidyDT.txt 
+### OUTPUT FROM SCRIPT : A tidy dataset saved in a file named tidyDT.txt 
 
-### SNAPSHOT OF Tidy dataset produced with View(dataset)
+### A SNAPSHOT OF the tidy dataset produced with View(dataset)
 
 ![](https://reg.run.edu.ng/DS/view_of_tidy_dataset.jpg)
+
+### CODE SNIPPET THAT PRODUCES above SNAPSHOT:
+
+    data <- read.table('tidyDT.txt', header = TRUE)  ##  reads the tidy dataset from disk
+    View(data)
 
 
 
 
 ### DIAGRAM OF THE SCRIPT's WORKINGS :  
 ![](http://reg.run.edu.ng/DS/alex_diagram.jpg)
-			Fig 1
+			 
 ![](http://reg.run.edu.ng/DS/david_hood_diagram.jpg)
-			Fig 2
+			 
 ## FUNCTIONAL COMPONENTS OF THE SCRIPT
 
       
@@ -75,12 +80,16 @@ Note : above input files to the script are obtained from
  
  
 ##  HIGH LEVEL ANALYSIS OF SCRIPT
-1.  DT<-get.tidy.dataset() 
-	--function call  returns tidy dataset DT
-2.  data <- read.table('tidyDT.txt', header = TRUE) 
-    -- function call reads the tidy dataset from disk
-3.  View(data)
-	--   views tidy dataset
+	Main()
+	 begin
+
+	1.  DT = get.tidy.dataset() 
+		--function call  returns tidy dataset DT
+	2.  data <- read.table('tidyDT.txt', header = TRUE) 
+    	-- function call reads the tidy dataset from disk
+	3.  View(data)
+		--   views tidy dataset
+	end	
 
 
     function get.tidy.dataset()
