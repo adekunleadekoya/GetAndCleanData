@@ -48,7 +48,7 @@ Note : above input files to the script are obtained from
    the zip file referenced in section INSTRUCTIONS above.
 
 
-### OUTPUT FROM SCRIPT : A tidy dataset saved in a file named tidyDT.txt 
+### OUTPUT FROM SCRIPT : A tidy dataset saved in a file named tidyDT.txt. The tidy dataset is created in line with the requirements of the foregoing section titled INSTRUCTIONS 
 
 ### LOCATION of tidy dataset on Github:
 [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt)
@@ -65,7 +65,7 @@ Note : above input files to the script are obtained from
 
 
 
-### A DIAGRAM OF THE SCRIPT's INNER WORKINGS :  
+### DIAGRAMS OF THE SCRIPT's INNER WORKINGS :  
 ![](http://reg.run.edu.ng/DS/alex_diagram.jpg)
 			 
 ![](http://reg.run.edu.ng/DS/david_hood_diagram.jpg)
