@@ -1,478 +1,108 @@
  
+##CodeBook for the tidy dataset
 
-<body>
-<table width="495" border="0"  >
-  <tr>
-    <td width="20">&nbsp;</td>
-    <td width="182">VARIABLE </td>
-    <td colspan="2" align="center">&nbsp;</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td><strong>activity.name</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td width="165">DESCRIPTION</td>
-    <td width="100">Names of activities</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>CATEGORICAL</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>1 WALKING  2 WALKING_UPSTAIRS 3  WALKING_DOWNSTAIRS 4 SITTING 5 STANDING 6 LAYING</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td><strong>subjects</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Individuals that perform the activities in the experiment</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Coded Numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Between 1 and 30</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp; </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td><strong>tBodyAcc.mean.X</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean of Body Acceleration along X-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td> Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td><strong>tBodyAcc.mean.Y</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean of Body Acceleration along Y-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td><strong>tBodyAcc.mean.Z</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean of Body Acceleration along Z-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td><strong>tBodyAcc.std.X</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Standard deviation of Body Acceleration along X-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>7</td>
-    <td><strong>tBodyAcc.std.Y</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Standard deviation of Body Acceleration along Y-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>8</td>
-    <td><strong>tBodyAcc.std.Z</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Standard deviation of Body Acceleration along Z-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>9</td>
-    <td><strong>tGravityAcc.mean.X</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean  of Body angular velocity along X-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td><strong>tGravityAcc.mean.Y</strong></td>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean  of Body angular velocity along Y-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td><strong>tGravityAcc.mean.Z</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>Mean  of Body angular velocity along Z-axis in time domain</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>Normalised numeric</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>Numbers</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>12</td>
-    <td><strong>tGravityAcc.std.X</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="4">&nbsp;</td>
-    <td rowspan="4">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td><strong>tGravityAcc.std.Y</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>14</td>
-    <td><strong>tGravityAcc.std.Z</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="4">&nbsp;</td>
-    <td rowspan="4">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>15</td>
-    <td><strong>tBodyAccJerk.mean.X</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="4">&nbsp;</td>
-    <td rowspan="4">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>16</td>
-    <td><strong>tBodyAccJerk.mean.Y</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>17</td>
-    <td><strong>tBodyAccJerk.mean.Z</strong></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="5">&nbsp;</td>
-    <td rowspan="5">&nbsp;</td>
-    <td>DESCRIPTION</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>VARIABLE TYPE</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>ALLOWABLE VALUES</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>COMMENT</td>
-    <td>&nbsp;</td>
-  </tr>
-   
-</table>
-</body>
- 
+###Data source
+
+This dataset is derived from the **"Human Activity Recognition Using Smartphones Data Set"** which was originally made available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+##Feature Selection 
+
+I refer you to the README and features.txt files in the original dataset to learn more about the feature selection for this dataset. And there you will find the following description:
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals (e.g.tAcc-XYZ and tGyro-XYZ). These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
+
+The reasoning behind my selection of features is that the assignment explicitly states "Extracts only the measurements on the mean and standard deviation for each measurement." To be complete, I included all variables having to do with mean or standard deviation.
+
+In short, for this derived dataset, these signals were used to estimate variables of the feature vector for each pattern:
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+## VARIABLES IN THE TIDY DATA SET
+ activity.name<br/>
+subject <br/>
+tBodyAcc.mean.X <br/>
+tBodyAcc.mean.Y <br/>
+tBodyAcc.mean.Z <br/>
+tBodyAcc.std.X <br/>
+tBodyAcc.std.Y <br/>
+tBodyAcc.std.Z <br/>
+tGravityAcc.mean.X <br/>
+tGravityAcc.mean.Y <br/>
+tGravityAcc.mean.Z <br/>
+tGravityAcc.std.X <br/>
+tGravityAcc.std.Y <br/>
+tGravityAcc.std.Z <br/>
+tBodyAccJerk.mean.X <br/>
+tBodyAccJerk.mean.Y <br/>
+tBodyAccJerk.mean.Z <br/>
+tBodyAccJerk.std.X  <br/>
+tBodyAccJerk.std.Y  <br/>
+tBodyAccJerk.std.Z <br/>
+tBodyGyro.mean.X <br/>
+tBodyGyro.mean.Y <br/>
+tBodyGyro.mean.Z <br/>
+tBodyGyro.std.X <br/>
+tBodyGyro.std.Y <br/>
+tBodyGyro.std.Z <br/>
+tBodyGyroJerk.mean.X  <br/>
+tBodyGyroJerk.mean.Y <br/>
+tBodyGyroJerk.mean.Z <br/>
+tBodyGyroJerk.std.X <br/>
+tBodyGyroJerk.std.Y <br/>
+tBodyGyroJerk.std.Z <br/>
+tBodyAccMag.mean <br/>
+tBodyAccMag.std <br/>
+tGravityAccMag.mean <br/>
+tGravityAccMag.std <br/>
+tBodyAccJerkMag.mean <br/>
+tBodyAccJerkMag.std <br/>
+tBodyGyroMag.mean <br/>
+tBodyGyroMag.std <br/>
+tBodyGyroJerkMag.mean <br/>
+tBodyGyroJerkMag.std <br/>
+fBodyAcc.mean.X  <br/>
+fBodyAcc.mean.Y <br/>
+fBodyAcc.mean.Z <br/>
+fBodyAcc.std.X <br/>
+fBodyAcc.std.Y <br/>
+fBodyAcc.std.Z <br/>
+fBodyAccJerk.mean.X  <br/>
+fBodyAccJerk.mean.Y <br/>
+fBodyAccJerk.mean.Z <br/>
+fBodyAccJerk.std.X <br/>
+fBodyAccJerk.std.Y <br/>
+fBodyAccJerk.std.Z <br/>
+fBodyGyro.mean.X <br/>
+fBodyGyro.mean.Y <br/>
+fBodyGyro.mean.Z <br/>
+fBodyGyro.std.X <br/>
+fBodyGyro.std.Y <br/>
+fBodyGyro.std.Z <br/>
+fBodyAccMag.mean <br/>
+fBodyAccMag.std <br/>
+fBodyAccJerkMag.mean <br/>
+fBodyAccJerkMag.std <br/>
+fBodyGyroMag.mean <br/>
+fBodyGyroMag.std <br/>
+fBodyGyroJerkMag.mean <br/>
+fBodyGyroJerkMag.std <br/>
+
+The set of variables that were estimated (and kept for this assignment) from these signals are:
+
+    
+
+- mean(): Mean value   
+- std(): Standard deviation
+
+Note: features are normalized and bounded within [-1,1].
+
+The resulting variable names are of the following form: 
+
+
+
+- tBodyAcc.mean.X, which means the mean value of  tBodyAcc-mean()-X for all measurements taken for every activity,subject pair.
+-  tGravityAcc.std.Y  which means the mean value of    tGravityAcc-std()-Y for all measurements taken for every activity,subject pair.
+- fBodyGyroJerkMag.mean  which means the mean value of   fBodyBodyGyroJerkMag-mean() for all measurements taken for every activity,subject pair.
