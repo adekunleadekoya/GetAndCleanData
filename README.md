@@ -21,7 +21,11 @@ I have created an R script called R_ANALYSIS.R that does the following.
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-- 
+##  PRE-ANALYSIS CLEASING OF INPUT
+
+### x_train.txt :
+
+### y_test.txt  :
 
 ## R SCRIPT - DOCUMENTATION 
 
@@ -79,121 +83,113 @@ Note : above input files to the script are obtained from
 - clean.up.column.names  --  this function is where the column labels/names are tidied up
  
  
-##  HIGH LEVEL ANALYSIS OF SCRIPT
+##  PSEUDOCODE-LIKE ANALYSIS OF SCRIPT
 	Main()
 	 begin
 
-	1.  DT = get.tidy.dataset() 
-		--function call  returns tidy dataset DT
-	2.  data <- read.table('tidyDT.txt', header = TRUE) 
-    	-- function call reads the tidy dataset from disk
-	3.  View(data)
-		--   views tidy dataset
+		1.  DT = get.tidy.dataset() 
+			--function call  returns tidy dataset DT
+		2.  data <- read.table('tidyDT.txt', header = 	TRUE) 
+    		-- function call reads the tidy dataset from disk
+		3.  View(data)
+			--   views tidy dataset
 	end	
 
 
     function get.tidy.dataset()
     	begin
-    
+           //STEP 1  starts here
+
+            x_train = load_x('x_train.txt')
+			y_train = load_y('y_train.txt')
+			subject_train = load_subject('subject_train.txt')
+
+			x_test = load_x('x_test.txt')
+			y_test = load_y('y_test.txt')
+			subject_test =load_subject('subject_test.txt')
+
+            x_DT=rbind(x_train,x_test)
+			y_DT=rbind(y_train,y_test)
+			subject_DT=rbind(subject_train,subject_test)
+			
+            colnames(x_DT) =load_features('features.txt') // add column labels
+			 
+       
+		 //STEP 2 starts here  
+ 
+			x_DT = x_DT[,grepl("[Mm]ean\\(\\)|std\\(\\)",colnames(DT))] # extracts mean() and std() columns from DT
+            // above line selects mean() and std() columns
+
+		 //STEP 3 starts here  
+
+		y_activity.names = getActivityLabelsGivenNumbers(y_DT)
+ 
+		DT<-cbind(y.activity.names[,1],DT) 
+		colnames(DT)[1] = 'activity.name' 
+		// above line adds activity column to left of DT
+
+	   //STEP 3 ends here  
+
+		DT<-cbind(subject_DT,DT) 
+	    colnames(DT)[1] =  'subject' 
+		// the 2 lines above add subject to the left of DT
+
+	   //STEP 4 starts here  
+
+	   colnames(DT) = clean.up.column.names( colnames(DT))
+
+	   //STEP 5 starts here
+
+		DT.2 <- DT %>% group_by(activity.name,subject) %>% summarise_each(funs(mean))
+		  // above line computes mean of selected  measures 
+          //   per activity,subject pair
+		  
+		write.table(DT.2,'tidyDT.txt',row.name=FALSE) 
+          // above line writes tidy dataset to text file
+
+                
+	    DT.2 // this line returns a tidy dataset to the      //caller
     	end 
     
-    function get.activity.names.from_activity_numbers()
+    function get.activity.names.from_activity_numbers(y_DT)
     	begin
-    
+    		activity.labels<-read.table('./activity_labels.txt')
+                 
+			j<-match(y_DT[,1],activity.labels[,1])
+                  
+			DT.activity.names <- data.frame(activity.labels[c(j),2],nrow=length(j),ncol=1)
+                 
+			DT.activity.names # returns a data.table that stores the activity names
+                  
+
     	end
 
     function clean.up.column.names()
     	begin
-    
+           // this function tidy(es) up the column labels
+		 v=gsub('-','.',v)		  
+    	 v=gsub('\\(','',v)
+         v=gsub(')','',v)
+         v=gsub('BodyBody','Body',v)
+         v 
     	end
 
  
 
 - 
+ 
 
-* **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
-* **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
-* **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
+## INSTALL SCRIPT
 
-## Install
-There are a few different ways you can install pyechonest:
 
-* Use setuptools: `easy_install -U pyechonest`
-* Download the zipfile from the [releases](https://github.com/echonest/pyechonest/releases) page and install it. 
-* Checkout the source: `git clone git://github.com/echonest/pyechonest.git` and install it yourself.
-   
-## Getting Started
-* Install Pyechonest
-* **Get an API key** - to use the Echo Nest API you need an Echo Nest API key.  You can get one for free at [developer.echonest.com](http://developer.echonest.com).
-* **Set the API** key - you can do this one of two ways:
-* set an environment variable named `ECHO_NEST_API_KEY` to your API key
-* Include this snippet of code at the beginning of your python scripts:
+## GETTING SCRIPT
 
-```python
-    from pyechonest import config
-    config.ECHO_NEST_API_KEY="YOUR API KEY"
-```
 
-* Check out the [docs](http://echonest.github.com/pyechonest/) and examples below.
+## FOR MORE HELP , CALL :
 
-## Examples
-*All examples assume you have already setup your api key!*
+- ADEKOYA ADEKUNLE ROTIMI
+- adekunleadekoya@gmail.com or adekoyaa@run.edu.ng
+- 2348130907739
 
-Find artists that are similar to 'Bikini Kill':
 
-```python
-from pyechonest import artist
-bk = artist.Artist('bikini kill')
-print "Artists similar to: %s:" % (bk.name,)
-for similar_artist in bk.similar: print "\t%s" % (similar_artist.name,)
-```
-
-Search for artist:
-```python
-from pyechonest import artist
-weezer_results = artist.search(name='weezer')
-weezer = weezer_results[0]
-weezer_blogs = weezer.blogs
-print 'Blogs about weezer:', [blog.get('url') for blog in weezer_blogs]
-```
-
-Get an artist by name:
-```python
-from pyechonest import artist
-a = artist.Artist('lady gaga')
-print a.id
-```
-
-Get an artist by Musicbrainz ID:
-```python
-from pyechonest import artist
-a = artist.Artist('musicbrainz:artist:a74b1b7f-71a5-4011-9441-d0b5e4122711')
-print a.name
-```
-
-Get the top hottt artists:
-```python
-from pyechonest import artist
-for hottt_artist in artist.top_hottt():
-print hottt_artist.name, hottt_artist.hotttnesss
-```
-
-Search for songs:
-```python
-from pyechonest import song
-rkp_results = song.search(artist='radiohead', title='karma police')
-karma_police = rkp_results[0]
-print karma_police.artist_location
-print 'tempo:',karma_police.audio_summary['tempo'],'duration:',karma_police.audio_summary['duration']
-```
-
-Get a song's audio_url and analysis_url:
-```python
-from pyechonest import song
-ss_results = song.search(artist='the national', title='slow show', buckets=['id:7digital-US', 'tracks'], limit=True)
-slow_show = ss_results[0]
-ss_tracks = slow_show.get_tracks('7digital-US')
-print ss_tracks[0].get('preview_url')
-```
-
--![alt text](http://i.imgur.com/WWLYo.gif "Frustrated cat can't believe this is the 12th time he's clicked on an auto-linked README.md URL")
+ 
