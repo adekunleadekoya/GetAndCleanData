@@ -25,7 +25,7 @@ I have created an R script called R_ANALYSIS.R that does the following.
 
 ## R SCRIPT - DOCUMENTATION 
 
-### A REQUIRED ASSUMPTION ABOUT THIS SCRIPT
+### A REQUIRED ASSUMPTION TO RUN THIS SCRIPT
 
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 
