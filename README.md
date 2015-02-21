@@ -80,6 +80,12 @@ Note : above input files to the script are obtained from
 - get.activity.names.from_activity_numbers -- this function is where the numeric activity numbers are mapped to the corresponding activity labels/descriptions
 
 - clean.up.column.names  --  this function is where the column labels/names are tidied up
+- functions such as `load_x`,`load_y` were invented for the purpose of this pseudocode. The true and functional equivalents of these invented functions may be found by looking up the code of `R_ANALYSIS.R`. The equivalent functions may be found at a similar region in `R_ANALYSIS.R`
+
+Note : The pseudocode in this README is documented in much the same way that the code in R_ANALYSIS.R is documented. The documentation is such as to mirror the 5 instructional steps highlighted in the foregoing section titled INSTRUCTIONS
+
+
+
  
  
 ##  PSEUDOCODE-LIKE ANALYSIS OF SCRIPT
@@ -121,7 +127,7 @@ Note : above input files to the script are obtained from
 
 		 //STEP 3 starts here  
 
-		y_activity.names = getActivityLabelsGivenNumbers(y_DT)
+		y_activity.names = get.activity.names.from_activity_numbers(y_DT)
  
 		DT<-cbind(y.activity.names[,1],DT) 
 		colnames(DT)[1] = 'activity.name' 
@@ -192,7 +198,7 @@ Note : above input files to the script are obtained from
 
 ##  RESULTS OF RUNNING THE SCRIPT
 - A **view** of the tidy dataset is popped up immediately the script runs to completion
-- Also, a file named tidyDT.txt is created and deposited on the working directory. The file contains the output of the script. You may open the file with a text editor and observe the integrity of the file's contents.
+- Also, a file named tidyDT.txt(click to download : [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt)) is created and deposited in the working directory. The file contains the output of the script. You may open the file with a text editor and observe the integrity of the file's contents.
 
 
 ## CONTACT ME :
