@@ -54,6 +54,9 @@ Note : above input files to the script are obtained from
 
 ### OUTPUT FROM SCRIPT : A tidy dataset saved in a file named tidyDT.txt 
 
+### LOCATION of tidy dataset on Github:
+[https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/tidyDT.txt)
+
 ### A SNAPSHOT OF the tidy dataset produced with View(dataset)
 
 ![](https://reg.run.edu.ng/DS/view_of_tidy_dataset.jpg)
