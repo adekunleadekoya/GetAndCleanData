@@ -193,7 +193,9 @@ Note : The pseudocode in this README is documented in much the same way that the
 3. DOWNLOAD THE SAMZUNG ZIP FILE [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 4. UNZIP the download from step 3 above
 5. Configure R/R Studio so that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
-6. From R/R Studio, type : source("<PATH-2-FILE>/run_analysis.R")
+6. From R/R Studio, type : source("run_analysis.R")
+
+Note :  The last step above assumes that run_analysis.R is in the working directory. 
 
 
 ##  RESULTS OF RUNNING THE SCRIPT
