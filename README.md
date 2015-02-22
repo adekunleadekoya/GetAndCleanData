@@ -29,7 +29,7 @@ I have created an R script called run_analysis.R that does the following.
 
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 
-### LOCATION OF SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/run_analysis.R)
+### LOCATION OF SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/run.analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/run_analysis.R)
  
 ### INPUT TO SCRIPT: 
 
