@@ -82,7 +82,7 @@ Note : above input files to the script are obtained from
 - clean.up.column.names  --  this function is where the column labels/names are tidied up
 - functions such as `load_x`,`load_y` were invented for the purpose of this pseudocode. The true and functional equivalents of these invented functions may be found by looking up the code of `run_analysis.R`. The equivalent functions may be found at a similar region in `run_analysis.R`
 
-Note : The pseudocode in this README is documented in much the same way that the code in R_ANALYSIS.R is documented. The documentation is such as to mirror the 5 instructional steps highlighted in the foregoing section titled INSTRUCTIONS
+Note : The pseudocode in this README is documented in much the same way that the code in run_analysis.R is documented. The documentation is such as to mirror the 5 instructional steps highlighted in the foregoing section titled INSTRUCTIONS
 
 
 
