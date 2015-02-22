@@ -29,7 +29,7 @@ I have created an R script called run_analysis.R that does the following.
 
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
 
-### LOCATION OF SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R)
+### LOCATION OF SCRIPT ON GITHUB: [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/run_analysis.R)
  
 ### INPUT TO SCRIPT: 
 
@@ -187,9 +187,9 @@ Note : The pseudocode in this README is documented in much the same way that the
 ## INSTALL AND RUN THE SCRIPT
 
  
-1. Clone the repo [https://github.com/adekunleadekoya/GetAndCleanData](https://github.com/adekunleadekoya/GetAndCleanData) and note the presence of a file R_ANALYSIS.R in the local repo.
+1. Clone the repo [https://github.com/adekunleadekoya/GetAndCleanData](https://github.com/adekunleadekoya/GetAndCleanData) and note the presence of a file run_analysis.R in the local repo.
            **OR** 
-2. Click  [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R) and copy the Raw version of the gitHub file to a text editor on your local machine. Save the copied contents as R_ANALYSIS.R
+2. Click  [https://github.com/adekunleadekoya/GetAndCleanData/blob/master/R_Analysis.R](https://github.com/adekunleadekoya/GetAndCleanData/blob/master/run_analysis.R) and copy the Raw version of the gitHub file to a text editor on your local machine. Save the copied contents as R_ANALYSIS.R
 3. DOWNLOAD THE SAMZUNG ZIP FILE [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 4. UNZIP the download from step 3 above
 5. Configure R/R Studio so that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder.
